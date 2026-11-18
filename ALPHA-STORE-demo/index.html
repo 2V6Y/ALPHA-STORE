@@ -1,0 +1,58 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ALPHA | متجر الألعاب</title><style>:root{color-scheme:dark;--bg:#080910;--panel:#12131e;--line:#28263c;--accent:#a777ff;--muted:#a9a7ba}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% 0,#24153e 0,transparent 45%),var(--bg);color:#fff;font-family:Tahoma,Arial,sans-serif}header{height:80px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:0 max(5%,calc((100% - 1150px)/2));background:#0a0a13bb;position:sticky;top:0;backdrop-filter:blur(14px);z-index:2}.logo{font-size:30px;font-weight:900;letter-spacing:4px}small,.muted{color:var(--muted)}button{font:inherit;cursor:pointer;border:0}header button,.cta{border-radius:12px;background:var(--accent);color:#0b0812;padding:13px 21px;font-weight:bold}.wrap{max-width:1150px;margin:auto;padding:28px 22px}.hero{min-height:340px;display:flex;align-items:center;justify-content:space-between;gap:30px}.hero h1{font-size:clamp(36px,6vw,70px);line-height:1.25;margin:15px 0}.hero p{color:#c3bfd2;line-height:1.9;max-width:550px}.tag{border:1px solid #6b4b9a;border-radius:50px;padding:8px 16px;color:#d7c0ff;display:inline-block}.coin{font-size:140px;text-shadow:0 0 70px #8c55ff;transform:rotate(-12deg)}h2{margin:28px 0 8px;font-size:29px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0}.product{border:1px solid var(--line);background:linear-gradient(155deg,#1b1830,#11121c 75%);padding:25px;border-radius:22px;min-height:235px;display:flex;flex-direction:column;gap:14px;transition:.2s}.product:hover{border-color:#8054c7;transform:translateY(-3px)}.product .mark{color:#c9a8ff;font-weight:900;font-size:24px}.product strong{font-size:26px}.product .price{font-size:25px;font-weight:bold;margin-top:auto}.product button{background:#a777ff;color:#100b19;border-radius:11px;padding:13px;font-weight:bold}.info{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:22px;margin:35px 0;line-height:2;color:#cbc8d5}footer{border-top:1px solid var(--line);padding:35px;text-align:center;color:var(--muted)}dialog{background:#151321;color:white;border:1px solid #5b447c;border-radius:20px;width:min(480px,92vw);padding:25px}dialog::backdrop{background:#000a}.cartrow{display:flex;justify-content:space-between;border-bottom:1px solid #363145;padding:13px 0;gap:12px}.close{background:transparent;color:white;font-size:23px;float:left}.total{font-size:23px;font-weight:bold;margin:25px 0}button:disabled{opacity:.55;cursor:default}.disabled{background:#514a61!important;color:#d6d0df!important;cursor:not-allowed!important;width:100%;padding:15px;border-radius:12px}a{color:#c9a8ff}@media(max-width:750px){.grid{grid-template-columns:repeat(2,1fr)}.coin{display:none}.hero{min-height:270px}}@media(max-width:470px){.grid{grid-template-columns:1fr}.product{min-height:190px}.hero h1{font-size:38px}header{padding:0 18px}.logo{font-size:25px}}.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.toolbar input,.toolbar select{background:#151422;border:1px solid #3c3450;color:#fff;border-radius:12px;padding:13px 16px;font:inherit;min-width:180px}.toolbar input{flex:1}.faq details{background:#141320;border:1px solid #30283f;border-radius:14px;padding:17px 20px;margin:12px 0;line-height:1.9}.faq summary{cursor:pointer;font-weight:bold}.status{display:inline-block;color:#e8c58d;border:1px solid #8b6840;border-radius:50px;padding:5px 12px;font-size:12px;margin-top:8px}nav a{margin:0 10px;text-decoration:none;font-size:14px}html{scroll-behavior:smooth}@media(max-width:700px){nav{display:none}} </style></head><body><header><div class="logo">ALPHA<span style="color:#a777ff">.</span></div><nav><a href="#products">الباقات</a><a href="#faq">الأسئلة الشائعة</a><a href="#policy">السياسات</a></nav><button onclick="showCart()">السلة (<span id="count">0</span>)</button></header><main class="wrap"><section class="hero"><div><span class="tag">ALPHA GAMING STORE</span><h1>عالم الألعاب<br><span style="color:#b18aff">يبدأ هنا.</span></h1><p>تصفح باقات V-Bucks بتصميم بسيط وواضح. جرّب إضافة الباقات للسلة وإرسال طلب تجريبي دون دفع أو تسليم.</p><a href="#products" class="cta" style="display:inline-block;text-decoration:none;margin-top:15px">تصفح الباقات</a></div><div class="coin">ⓥ</div></section><section id="products"><h2>باقات V-Bucks</h2><p class="muted">اختر الباقة المناسبة لك</p><div class="toolbar"><input id="search" type="search" placeholder="ابحث عن باقة، مثال: 9000" aria-label="البحث عن باقة" oninput="drawProducts()"><select id="sort" aria-label="ترتيب الباقات" onchange="drawProducts()"><option value="default">الترتيب الافتراضي</option><option value="low">السعر: الأقل أولًا</option><option value="high">السعر: الأعلى أولًا</option></select></div><div class="grid" id="grid"></div></section><section class="faq" id="faq"><h2>الأسئلة الشائعة</h2><details><summary>هل يمكن إتمام الطلب الآن؟</summary><p class="muted">يمكنك إرسال طلب تجريبي من السلة عند اتصال المتجر بخدمة الطلبات. لن تُحصّل أي مبالغ ولن تُسلّم أي باقات.</p></details><details><summary>هل الأسعار بالريال السعودي؟</summary><p class="muted">نعم، جميع الأسعار المعروضة بالريال السعودي.</p></details><details><summary>هل ALPHA متجر رسمي تابع لفورتنايت؟</summary><p class="muted">لا. ALPHA ليس تابعًا لشركة Epic Games أو Fortnite.</p></details></section><section class="info" id="policy"><b>سياسة الطلبات والاسترجاع — مسودة قبل الإطلاق</b><div>تُستخدم الطلبات لاختبار المتجر فقط، دون تحصيل مبالغ أو تسليم باقات. يجب نشر سياسة تسليم واسترجاع واضحة ودقيقة بعد اعتماد طريقة توريد متوافقة مع شروط الجهات المعنية وقواعد حماية المستهلك، وقبل بدء البيع.</div></section><section class="info"><b>معلومات مهمة</b><div>الأسعار المعروضة بالريال السعودي. هذا المتجر نسخة تجريبية تستخدم أسعارًا للعرض ولا تقبل المدفوعات. لا توجد علاقة رسمية بين ALPHA وEpic Games أو Fortnite. يجب التحقق من مشروعية وطريقة توريد المنتجات قبل تفعيل البيع.</div></section></main><footer>© 2026 ALPHA — جميع الحقوق محفوظة · نموذج متجر تجريبي · <a id="admin-link" href="/admin" hidden>إدارة الطلبات</a></footer><dialog id="cart" aria-labelledby="cart-title"><button aria-label="إغلاق السلة" class="close" onclick="document.getElementById('cart').close()">✕</button><h2 id="cart-title">سلة المشتريات</h2><div id="items"></div><div class="total" id="total"></div><button id="checkout" type="button" class="cta" onclick="placeOrder()" disabled>إرسال طلب تجريبي</button><p id="checkout-note" class="muted">لا يوجد دفع أو تسليم.</p><p id="order-result" role="status"></p></dialog><script>let products=[];let online=false;let submitting=false;const cart=[];const fmt=n=>n.toLocaleString('en-US');function drawProducts(){const q=document.getElementById('search').value.replace(/,/g,'').trim();const sort=document.getElementById('sort').value;let rows=products.map(([v,p],i)=>({v,p,i})).filter(x=>!q||String(x.v).includes(q)||String(x.p).includes(q));if(sort==='low')rows.sort((a,b)=>a.p-b.p);if(sort==='high')rows.sort((a,b)=>b.p-a.p);document.getElementById('grid').innerHTML=rows.length?rows.map(({v,p,i})=>`<article class="product"><div class="mark">ⓥ &nbsp; V-BUCKS</div><strong>${fmt(v)} V-Bucks</strong><div class="muted">باقة رقم ${i+1}</div><div class="price">${fmt(p)} ر.س</div><button onclick="add(${i})">إضافة للسلة +</button></article>`).join(''):'<p class="muted">ما لقينا باقة مطابقة للبحث.</p>'}function add(i){if(submitting)return;if(cart.length>=20){showCart();notice('الحد الأقصى 20 باقة للطلب التجريبي.');return;}notice('');cart.push(i);document.getElementById('count').textContent=cart.length;showCart()}function remove(i){if(submitting)return;notice('');cart.splice(i,1);document.getElementById('count').textContent=cart.length;render()}function render(){document.getElementById('items').innerHTML=cart.length?cart.map((id,i)=>`<div class="cartrow"><span>${fmt(products[id][0])} V-Bucks</span><span>${fmt(products[id][1])} ر.س <button style="background:transparent;color:#e99" onclick="remove(${i})">حذف</button></span></div>`).join(''):'<p class="muted">السلة فارغة</p>';document.getElementById('total').textContent='الإجمالي: '+fmt(cart.reduce((s,id)=>s+products[id][1],0))+' ر.س';updateCheckout()}function showCart(){
+  render();
+  const dialog=document.getElementById('cart');
+  if(!dialog.open) dialog.showModal();
+}
+function notice(text){document.getElementById('order-result').textContent=text}
+function updateCheckout(){
+  document.getElementById('checkout').disabled=!online||!cart.length||submitting;
+  document.getElementById('checkout-note').textContent=online
+    ?'لا يوجد دفع أو تسليم.'
+    :'إرسال الطلبات التجريبية غير متاح حاليًا.';
+}
+async function placeOrder(){
+  if(!online||!cart.length||submitting)return;
+  submitting=true;
+  updateCheckout();
+  notice('جارٍ إرسال الطلب…');
+  try{
+    const response=await fetch('/api/orders',{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items:cart})
+    });
+    if(response.status===429){notice('محاولات كثيرة. جرّب بعد قليل.');return;}
+    if(!response.ok)throw new Error();
+    const order=await response.json();
+    cart.length=0;
+    document.getElementById('count').textContent='0';
+    render();
+    notice('تم تسجيل الطلب التجريبي. رقم الطلب: '+order.id);
+  }catch{
+    notice('تعذّر تأكيد تسجيل الطلب. تحقق من الاتصال قبل المحاولة مجددًا.');
+  }finally{
+    submitting=false;
+    updateCheckout();
+  }
+}
+async function loadCatalog(){
+  try{
+    const response=await fetch('/catalog.json');
+    if(!response.ok)throw new Error();
+    products=await response.json();
+    drawProducts();
+  }catch{
+    document.getElementById('grid').textContent='تعذّر تحميل الباقات. أعد تحميل الصفحة للمحاولة مجددًا.';
+  }
+}
+async function checkService(){
+  try{
+    const response=await fetch('/health');
+    online=response.ok&&(await response.json()).ok===true;
+  }catch{
+    online=false;
+  }
+  document.getElementById('admin-link').hidden=!online;
+  updateCheckout();
+}
+loadCatalog();
+checkService();
+</script></body></html>

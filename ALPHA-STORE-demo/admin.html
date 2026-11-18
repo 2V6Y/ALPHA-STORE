@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALPHA | إدارة الطلبات التجريبية</title>
+<style>
+:root{color-scheme:dark}body{margin:0;background:radial-gradient(ellipse at top,#24153e,transparent 65%),#080910;color:white;font:1rem/1.7 Tahoma,Arial,sans-serif;min-height:100vh}main{max-width:850px;margin:auto;padding:30px 20px}a{color:#c9a8ff}form,article{background:#12131e;border:1px solid #28263c;border-radius:16px;padding:18px;margin:12px 0}label{display:block}input,select,button{font:inherit;padding:8px 12px;border-radius:8px;margin:5px 0}input,select{border:1px solid #5b447c;background:#151321;color:white}button{border:0;background:#a777ff;color:#100b19;font-weight:bold;cursor:pointer}button:disabled{opacity:.5;cursor:default}#message{color:#e8c58d}bdi{overflow-wrap:anywhere}
+</style>
+<main>
+  <a href="/">العودة إلى ALPHA</a>
+  <h1>إدارة الطلبات التجريبية</h1>
+  <p id="message" role="status"></p>
+  <form id="login" hidden>
+    <label for="password">كلمة مرور الإدارة</label>
+    <input id="password" type="password" autocomplete="current-password" required>
+    <button>دخول</button>
+  </form>
+  <section id="dashboard" hidden>
+    <button id="refresh">تحديث القائمة</button>
+    <button id="logout">تسجيل الخروج</button>
+    <div id="orders"></div>
+    <button id="previous">السابق</button>
+    <button id="next">التالي</button>
+  </section>
+</main>
+<script src="/admin.js" defer></script>
+</html>
